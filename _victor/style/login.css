@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+:root{
+    --bgColor: oklch(96.8% 0.007 247.896); /* Gray */ /* https://tailwindcss.com/docs/colors */
+    --colorDark: oklch(13% 0.028 261.692); /* Gray */
+
+    --colorbase2: #eceef4;
+
+    --bordaClaro: oklch(87% 0.065 274.039); /* Indigo */
+
+    --botaoAzul: oklch(67.3% 0.182 276.935);
+    --botaoAzulHover: oklch(58.5% 0.233 277.117);
+    --botaoLrj: oklch(75% 0.183 55.934); /* Orange */
+    --botaoLrjHover: oklch(70.5% 0.213 47.604); /* Orange */
+}
+body.dark {
+    --bgColor: #121212;
+    --text-color: #fff;
+    --card-color: #1e1e1e;
+    --border-color: #555;
+}
+
+body{
+    font-family: "Noto Sans", sans-serif;
+    margin: 40px;
+    background-color: var(--bgColor);
+    color: var(--txt-color);
+}
+
+/*
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+*/
+
+.inputLgn{
+    display: flex;
+    background-color: var(--colorbase2);
+    padding: 10px;
+    border-radius: 8px;
+    border: solid 2px var(--bordaClaro);
+    font-size: 14px;
+    margin-bottom: 16px;
+    width: 350px;
+}
+
+.inputLgn:focus{
+    border-color: oklch(54.1% 0.281 293.009);
+    outline: none;
+}
+
+.lblLog{
+    display: flex;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.btnLogin{
+    font-family: "Noto Sans", sans-serif;
+    width: 185px;
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+#btnEntrar{
+    background-color: var(--botaoAzul);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+#btnEntrar:hover{
+    background-color: var(--botaoAzulHover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 10px #2339ffab;
+}
+
+#btnCriar{
+    background-color: var(--botaoLrj);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+#btnCriar:hover{
+    background-color: var(--botaoLrjHover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 10px #ff6d23ab;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Task Manager</title>
+<link rel="stylesheet" href="style/login.css">
+<link rel="shortcut icon" href="images/favicon_io/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="form-container">
+    <h1>GerenciAll</h1>
+
+
+    <label class="remember-container">
+        <label class="switch">
+          <button onclick="alternarTema()"></button>
+            <input type="checkbox" id="remember-toggle" onclick="alternarTema()">
+            <span class="slider"></span>
+        </label>
+        <span>Modo Noturno</span>
+    </label>
+
+
+    <form>
+      <label for="lgnInput" class="lblLog">Email</label>
+      <input type="text" id="lgnInput" class="inputLgn" placeholder="Usuário" required />
+      
+      <label for="lgnPass" class="lblLog">Senha</label>
+      <input type="password" id="lgnPass" class="inputLgn" placeholder="Senha" required />
+
+      <button type="button" class="btnLogin" id="btnEntrar" onclick="login()">Entrar</button>
+      <button type="button" class="btnLogin" id="btnCriar" onclick="signIn()">Criar conta</button>
+    </form>
+  </div>
+  <script type="module" src="facudade/taskmanager/src/main/resources/static/js/auth.js"></script>
+
+
+  <script src="script/login.js"></script>
+</body>
+</html>

@@ -4,51 +4,102 @@
 @import "tailwindcss";
 
 :root{
-    --bgColor: oklch(96.8% 0.007 247.896); /* Gray */ /* https://tailwindcss.com/docs/colors */
-    --colorDark: oklch(13% 0.028 261.692); /* Gray */
+    --bgColor: oklch(96.8% 0.007 247.896); /* Slate */ /* https://tailwindcss.com/docs/colors */
 
-    --colorbase2: #eceef4;
+    --inptColor: #eceef4;
 
-    --bordaClaro: oklch(87% 0.065 274.039); /* Indigo */
+    --border-color: oklch(87% 0.065 274.039); /* Indigo */
 
     --botaoAzul: oklch(67.3% 0.182 276.935);
     --botaoAzulHover: oklch(58.5% 0.233 277.117);
     --botaoLrj: oklch(75% 0.183 55.934); /* Orange */
     --botaoLrjHover: oklch(70.5% 0.213 47.604); /* Orange */
+
+    --btnRoxo: oklch(49.6% 0.265 301.924);
+
+    --shadowEntrar:#2339ffab;
+    --shadowCriar:#ff6d23ab;
+    --shadowBox:rgba(0, 0, 0, 0.12);
+
+    --header: #30306E;
+    --footer: oklch(18% 0.045 264.695);
+    --txt-color-footer: #605c72;
 }
+
 body.dark {
-    --bgColor: #121212;
-    --text-color: #fff;
-    --card-color: #1e1e1e;
-    --border-color: #555;
+    --bgColor: oklch(12.9% 0.042 264.695);
+    --txt-color: #fff;
+    --border-color: oklch(37.2% 0.044 257.287);
+    --inptColor: oklch(27.9% 0.041 260.031);
+
+    --shadowEntrar:#97a2fdab;
+    --shadowCriar:#ff945ec0;
+    --shadowBox:rgba(88, 76, 105, 0.308);
+
+    --header: oklch(20.8% 0.042 265.755);
+    --footer: oklch(18% 0.045 264.695);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans", sans-serif;
 }
 
 body{
-    font-family: "Noto Sans", sans-serif;
-    margin: 40px;
     background-color: var(--bgColor);
     color: var(--txt-color);
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh;
 }
 
-/*
-body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+header{
+    background-color: var(--header);
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-*/
+
+#logo{
+    max-width: 200px;
+}
+
+main.form-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container{
+    position: relative;
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 5px 32px var(--shadowBox);
+    width: 100%;
+    max-width: 420px;
+    background-color: var(--bgColor);
+    color: var(--txt-color);
+    transition: 0.3s;
+}
+
+form h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
 
 .inputLgn{
     display: flex;
-    background-color: var(--colorbase2);
+    background-color: var(--inptColor);
     padding: 10px;
     border-radius: 8px;
-    border: solid 2px var(--bordaClaro);
+    border: solid 2px var(--border-color);
     font-size: 14px;
     margin-bottom: 16px;
-    width: 350px;
+    width: 362px;
 }
 
 .inputLgn:focus{
@@ -73,6 +124,11 @@ body {
     cursor: pointer;
 }
 
+.buttons{
+    display: flex;
+    gap: 15px;
+}
+
 #btnEntrar{
     background-color: var(--botaoAzul);
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -81,7 +137,7 @@ body {
     background-color: var(--botaoAzulHover);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0px 0px 10px #2339ffab;
+    box-shadow: 0px 0px 10px var(--shadowEntrar);
 }
 
 #btnCriar{
@@ -93,5 +149,149 @@ body {
     background-color: var(--botaoLrjHover);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0px 0px 10px #ff6d23ab;
+    box-shadow: 0px 0px 10px var(--shadowCriar);
+}
+
+
+/* Switch modo noturno */
+
+.remember-container {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--txt-color, #333);
+}
+
+.switch {
+    position: relative;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--botaoLrj);
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+    background-color: var(--btnRoxo);
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+
+
+/* Footer */
+footer {
+    background-color: var(--footer);
+    color: var(--txt-color);
+    padding: 2rem 1.5rem;
+    font-family: "Noto Sans", sans-serif;
+    user-select: none;
+}
+
+.footer-conteudo {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-conteudo h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--border-color);
+}
+
+.devs-table {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.devs-table li {
+    background-color: oklch(20% 0.04 264.695);
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.devs-table li:hover {
+    box-shadow: 0 3px 8px var(--shadowBox);
+    transform: scale(1.02);
+}
+
+.devs-table li:hover span {
+    color: var(--botaoAzul);
+}
+
+.devs-table span {
+    font-weight: 600;
+    flex: 1;
+    font-size: 1rem;
+    color: var(--txt-color-footer);
+}
+
+/* Ícones das redes */
+.devs-table a img {
+    width: 28px;
+    height: 28px;
+    opacity: 0.6;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    display: block;
+}
+
+.devs-table a img:hover {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+/* Separador */
+.footer-conteudo hr {
+    margin: 2rem 0 1rem;
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    opacity: 0.2;
+}
+
+/* Copyright */
+footer .copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--border-color);
 }

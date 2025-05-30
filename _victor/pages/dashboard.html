@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GerenciALL | Login</title>
     <link rel="stylesheet" href="../style/dashboard.css">
+    <link rel="stylesheet" href="../style/login.css">
     <link rel="stylesheet" href="../style/generico/footer.css"> <!-- Genérico -->
     <link rel="stylesheet" href="../style/generico/header.css"> <!-- Genérico -->
     <link rel="shortcut icon" href="../images/favicon_io/favicon.ico" type="image/x-icon">
@@ -12,6 +13,14 @@
 <body>
     <header>
         <img src="../images/logo/logoGerenciall.png" alt="logo do site" id="logo">
+        
+        <div class="remember-container">
+            <span style="color: white;">Theme</span>
+            <label class="switch">
+                <input type="checkbox" id="remember-toggle" onclick="alternarTema()">
+                <span class="slider"></span>
+            </label>
+        </div>
     </header>
 
     <main class="container">

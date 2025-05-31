@@ -2,3 +2,153 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
+/* Cores principais */
+:root{
+    --bgColor: oklch(96.8% 0.007 247.896); /* Slate */ /* https://tailwindcss.com/docs/colors */
+    --inptColor: #eceef4;
+    --border-color: oklch(87% 0.065 274.039); /* Indigo */
+    --txt-color: #0f172a;
+
+    --botaoAzul: oklch(67.3% 0.182 276.935);
+    --botaoAzulHover: oklch(58.5% 0.233 277.117);
+    --shadowEntrar:#2339ffab;
+
+    --botaoLrj: oklch(75% 0.183 55.934); /* Orange */
+    --botaoLrjHover: oklch(70.5% 0.213 47.604); /* Orange */
+    --shadowCriar:#ff6d23ab;
+
+    --btnRoxo: oklch(49.6% 0.265 301.924);
+
+    --shadowBox:rgba(0, 0, 0, 0.12);
+
+    --vermelho: #dc2626;
+    --amarelo: #facc15;
+    --azul-claro: #93c5fd;
+}
+
+
+body.dark {
+    --bgColor: oklch(12.9% 0.042 264.695);
+    --border-color: oklch(37.2% 0.044 257.287);
+    --inptColor: oklch(27.9% 0.041 260.031);
+    --txt-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Já editado e pronto para aplicar o modo noturno */
+body {
+    background-color: var(--fundo-claro);
+    color: var(--texto);
+}
+
+main {
+    max-width: 1500px;
+    margin: auto;
+    padding-bottom: 4rem;
+}
+
+hr{
+    margin: 15px 0 15px 0;
+}
+
+h2 {
+    font-size: 32px;
+    margin: 15px 0 15px 0;
+    text-align: center;
+}
+
+.acoes-topo {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 8px 24px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#btnExportar{
+    background-color: var(--botaoLrj);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#btnNova, #btnMarcar{
+    background-color: var(--botaoAzul);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;    
+}
+
+#btnExportar:hover{
+    background-color: var(--botaoLrjHover);
+    box-shadow: 0 0 5px var(--shadowCriar);
+    transform: translateY(-1px);
+}
+
+#btnNova:hover, #btnMarcar:hover{
+    background-color: var(--botaoAzulHover);
+    box-shadow: 0 0 5px var(--shadowEntrar);
+    transform: translateY(-1px);
+}
+
+.filtro-select{
+    background-color: var(--inptColor);
+    border: solid 3px var(--border-color);
+    border-radius: 10px;
+    width: 200px;
+    padding: 6px;
+    color: var(--texto);
+    transition: background-color 0.3s, color 0.3s;
+}
+.filtro-select:focus{
+    border-color: var(--btnRoxo);
+}
+
+/* Cards de tarefas */
+.card {
+  background-color: var(--inptColor);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: relative;
+  border-left: 12px solid var(--vermelho); /* padrão, será sobrescrito via JS */
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: #475569;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Badge de status */
+.status {
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--txt-color);
+  font-weight: bold;
+}

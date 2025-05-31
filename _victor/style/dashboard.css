@@ -25,6 +25,7 @@
     --vermelho: #dc2626;
     --amarelo: #facc15;
     --azul-claro: #93c5fd;
+    --verde: #10b981;
 }
 
 
@@ -36,9 +37,9 @@ body.dark {
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Já editado e pronto para aplicar o modo noturno */
@@ -118,30 +119,29 @@ button {
 
 /* Cards de tarefas */
 .card {
-  background-color: var(--inptColor);
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  position: relative;
-  border-left: 12px solid var(--vermelho); /* padrão, será sobrescrito via JS */
+    background-color: var(--inptColor);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 12px solid var(--vermelho); /* padrão, será sobrescrito via JS */
+    flex: 1; 
 }
 
 .card h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 .card p {
-  margin-bottom: 1rem;
-  color: #475569;
+    margin-bottom: 1rem;
+    color: #475569;
 }
 
 .card-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Badge de status */
@@ -151,4 +151,51 @@ button {
   font-size: 0.9rem;
   color: var(--txt-color);
   font-weight: bold;
+}
+
+.btn-feito {
+    background-color: var(--verde);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-normal {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.caixa-tarefa {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.botoes-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.icon-button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: #475569;
+}
+
+.data-header {
+    margin-top: 2rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--vermelho);
 }

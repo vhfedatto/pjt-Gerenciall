@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bgColor);
+    color: var(--txt-color);
+    max-width: 2900px;
+}
+
+main {
+    margin: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    margin: auto 0px;
+}
+
+hr {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.card {
+    width: 100%;
+    max-width: 1000px;
+    border-right: solid 20px var(--border-color);
+    background-color: var(--inptColor);
+    padding: 16px 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px var(--shadowBox);
+    line-height: 1.5;
+}
+
+form {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inptCriar, input[type="date"] {
+    width: 100%;
+    background-color: var(--inptColor);
+    border: solid 3px var(--border-color);
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px;
+    color: var(--texto);
+    transition: background-color 0.3s, color 0.3s;
+    outline: none;
+    margin-bottom: 18px;
+    margin-top: 8px;
+}
+
+.lblTasks{
+    color: var(--txt-color);
+    font-weight: 700;
+}
+
+select{
+    width: 100%;
+    background-color: var(--inptColor);
+    border: solid 3px var(--border-color);
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px;
+    color: var(--texto);
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 18px;
+    margin-top: 8px;
+}
+
+.inptCriar:focus, select:focus, input[type="date"]:focus {
+    border-color: var(--btnRoxo);
+}
+
+.h3Prioridade {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    outline: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+
+.radio-option input[type="radio"]#radioBaixo {
+    background-color: #3b82f6;
+}
+.radio-option input[type="radio"]#radioMedia {
+    background-color: #facc15;
+}
+.radio-option input[type="radio"]#radioUrgente {
+    background-color: #ef4444;
+}
+
+.radio-option input[type="radio"]:checked {
+    outline: 2px solid var(--txt-color);
+}
+
+
+.txtCard{
+    color: var(--txt-color);
+    margin-bottom: 10px;
+}
+
+#tituloCard{
+    font-size: 20px;
+}
+
+#descricaoCard{
+    font-style: italic;
+    color: var(--txt-color-Desc);
+}
+
+#dataCard{
+    margin-bottom: 0px;
+}
+
+
+button[type="submit"] {
+    margin-top: 50px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--botaoAzul);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover{
+    background-color: var(--botaoAzulHover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 10px var(--shadowEntrar);
+}
+
+.header-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#btnVoltar {
+    margin: auto 0px;
+    align-self: flex-start center;
+    align-items: center;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100px;
+    height: 40px;
+    color: var(--txt-color-Desc);
+    background-color: #e5e7eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btnVoltar:hover {
+    background-color: #d1d5db;
+    transform: translateX(-2px);
+}

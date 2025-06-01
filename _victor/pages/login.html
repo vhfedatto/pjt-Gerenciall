@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GerenciALL | Login</title>
+    <script src="../script/piscadas.js"></script> <!-- Evitar as piscadas -->
+    
     <link rel="stylesheet" href="../style/login.css">
+    <link rel="stylesheet" href="../style/generico/theme.css">
     <link rel="stylesheet" href="../style/generico/footer.css"> <!-- Genérico -->
     <link rel="stylesheet" href="../style/generico/header.css"> <!-- Genérico -->
     
@@ -17,7 +20,7 @@
 
     <main class="form-wrapper">
         <div class="form-container">
-            <div class="remember-container">
+            <div class="theme">
                 <span>Theme</span>
                 <label class="switch">
                     <input type="checkbox" id="remember-toggle" onclick="alternarTema()">
@@ -85,6 +88,6 @@
         <p class="copyright">&copy; 2025 GerenciAll; Site desenvolvido pela equipe [nome]. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="../script/login.js"></script>
+    <script src="../script/theme.js"></script>
 </body>
 </html>

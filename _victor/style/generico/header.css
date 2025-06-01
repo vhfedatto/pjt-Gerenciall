@@ -3,46 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-:root{
-    --bgColor: oklch(96.8% 0.007 247.896); /* Slate */ /* https://tailwindcss.com/docs/colors */
-
-    --inptColor: #eceef4;
-
-    --border-color: oklch(87% 0.065 274.039); /* Indigo */
-
-    --botaoAzul: oklch(67.3% 0.182 276.935);
-    --botaoAzulHover: oklch(58.5% 0.233 277.117);
-    --botaoLrj: oklch(75% 0.183 55.934); /* Orange */
-    --botaoLrjHover: oklch(70.5% 0.213 47.604); /* Orange */
-
-    --btnRoxo: oklch(49.6% 0.265 301.924);
-    --btnRed: oklch(63.7% 0.237 25.331);
-    --btnRedHover: oklch(57.7% 0.245 27.325);
-
-    --shadowEntrar:#2339ffab;
-    --shadowCriar:#ff6d23ab;
-    --shadowCancelar: #ff1b1bab;
-    --shadowBox:rgba(0, 0, 0, 0.12);
-
-    --header: #30306E;
-    --footer: oklch(18% 0.045 264.695);
-    --txt-color-footer: #605c72;
-}
-
-body.dark {
-    --bgColor: oklch(12.9% 0.042 264.695);
-    --txt-color: #fff;
-    --border-color: oklch(37.2% 0.044 257.287);
-    --inptColor: oklch(27.9% 0.041 260.031);
-
-    --shadowEntrar:#97a2fdab;
-    --shadowCriar:#ff945ec0;
-    --shadowBox:rgba(88, 76, 105, 0.308);
-
-    --header: oklch(20.8% 0.042 265.755);
-    --footer: oklch(18% 0.045 264.695);
-}
-
 *{
     margin: 0;
     padding: 0;

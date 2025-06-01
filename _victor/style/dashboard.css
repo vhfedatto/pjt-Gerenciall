@@ -3,39 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
-/* Cores principais */
-:root{
-    --bgColor: oklch(96.8% 0.007 247.896); /* Slate */ /* https://tailwindcss.com/docs/colors */
-    --inptColor: #eceef4;
-    --border-color: oklch(87% 0.065 274.039); /* Indigo */
-    --txt-color: #0f172a;
-
-    --botaoAzul: oklch(67.3% 0.182 276.935);
-    --botaoAzulHover: oklch(58.5% 0.233 277.117);
-    --shadowEntrar:#2339ffab;
-
-    --botaoLrj: oklch(75% 0.183 55.934); /* Orange */
-    --botaoLrjHover: oklch(70.5% 0.213 47.604); /* Orange */
-    --shadowCriar:#ff6d23ab;
-
-    --btnRoxo: oklch(49.6% 0.265 301.924);
-
-    --shadowBox:rgba(0, 0, 0, 0.12);
-
-    --vermelho: #dc2626;
-    --amarelo: #facc15;
-    --azul-claro: #93c5fd;
-    --verde: #10b981;
-}
-
-
-body.dark {
-    --bgColor: oklch(12.9% 0.042 264.695);
-    --border-color: oklch(37.2% 0.044 257.287);
-    --inptColor: oklch(27.9% 0.041 260.031);
-    --txt-color: #fff;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -46,10 +13,11 @@ body.dark {
 body {
     background-color: var(--fundo-claro);
     color: var(--texto);
+    
 }
 
 main {
-    max-width: 1500px;
+    width: 1500px;
     margin: auto;
     padding-bottom: 4rem;
 }
@@ -187,9 +155,7 @@ button {
 .icon-button {
     background-color: transparent;
     border: none;
-    font-size: 1.3rem;
     cursor: pointer;
-    color: #475569;
 }
 
 .data-header {
@@ -198,4 +164,8 @@ button {
     font-weight: bold;
     font-size: 1rem;
     color: var(--vermelho);
+}
+
+.icone_editar_excluir{
+    width: 20px;
 }

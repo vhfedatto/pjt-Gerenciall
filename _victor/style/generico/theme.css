@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+/* Cores principais */
+:root{
+    --bgColor: oklch(96.8% 0.007 247.896); /* Slate */ /* https://tailwindcss.com/docs/colors */
+    --inptColor: #eceef4;
+    --border-color: oklch(87% 0.065 274.039); /* Indigo */
+    --txt-color: #0f172a;
+    --txt-color-Desc: #485572;
+
+    --botaoAzul: oklch(67.3% 0.182 276.935);
+    --botaoAzulHover: oklch(58.5% 0.233 277.117);
+    --shadowEntrar:#2339ffab;
+
+    --botaoLrj: oklch(75% 0.183 55.934); /* Orange */
+    --botaoLrjHover: oklch(70.5% 0.213 47.604); /* Orange */
+    --shadowCriar:#ff6d23ab;
+
+    --btnRoxo: oklch(49.6% 0.265 301.924);
+
+    --shadowBox:rgba(0, 0, 0, 0.12);
+
+    --vermelho: #dc2626;
+    --amarelo: #facc15;
+    --azul-claro: #93c5fd;
+    --verde: #10b981;
+
+    --header: #30306E;
+    --footer: oklch(18% 0.045 264.695);
+    --txt-color-footer: #605c72;
+}
+
+
+body.dark {
+    --bgColor: oklch(12.9% 0.042 264.695);
+    --border-color: oklch(37.2% 0.044 257.287);
+    --inptColor: oklch(27.9% 0.041 260.031);
+    --txt-color: #fff;
+    --txt-color-Desc: #7d8cad;
+
+    --header: oklch(20.8% 0.042 265.755);
+    --footer: oklch(18% 0.045 264.695);
+}
+/* Switch modo noturno */
+.theme {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--txt-color, #333);
+}
+
+.switch {
+    position: relative;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--botaoLrj);
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+    background-color: var(--btnRoxo);
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(22px);
+}

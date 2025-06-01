@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GerenciALL | Login</title>
-    <link rel="stylesheet" href="../style/login.css">
+    <script src="../script/piscadas.js"></script> <!-- Evitar as piscadas -->
+
+    <link rel="stylesheet" href="../style/criarTask.css">
+    <link rel="stylesheet" href="../style/generico/theme.css">
     <link rel="stylesheet" href="../style/generico/footer.css"> <!-- Genérico -->
     <link rel="stylesheet" href="../style/generico/header.css"> <!-- Genérico -->
     
@@ -13,9 +16,59 @@
 <body>
     <header>
         <img src="../images/logo/logoGerenciall.png" alt="logo do site" id="logo">
+        <div class="theme">
+            <span style="color: white;">Theme</span>
+            <label class="switch">
+                <input type="checkbox" id="remember-toggle" onclick="alternarTema()">
+                <span class="slider"></span>
+            </label>
+        </div>
     </header>
-
+    
     <main class="container">
+        <div class="header-container">
+            <button id="btnVoltar" type="button">Voltar</button>
+            <h1>Criar Tarefas</h1>
+        </div>
+        <hr>
+
+        <div class="card"><!--Aqui irá aparecer um card que vai sendo atualizado enquanto o usuário digita as informações no form--></div>
+
+        <form>
+            <label for="tituloTask" class="lblTasks">Título da Tarefa</label>
+            <input type="text" id="tituloTask" class="inptCriar" placeholder="Ex: Estudar Matemática">
+
+            <label for="descTask" class="lblTasks">Descrição da Tarefa</label>
+            <input type="text" id="descTask" class="inptCriar" placeholder="Ex: Estudar os assuntos de matrizes, progressão...">
+
+            <label for="selectStatus" class="lblTasks">Status da Tarefa</label>
+            <select name="selectStatus" id="selectStatus">
+                <option value="pendente">Pendente</option>
+                <option value="feita">Feita</option>
+            </select>
+
+            <label for="dataTask" class="lblTasks">Data da Tarefa</label>
+            <input type="datetime-local" id="dataTask" class="inptCriar">
+
+            <h3 class="h3Prioridade">Prioridade da Tarefa</h3>
+            <div class="radio-group">
+                <label class="radio-option" for="radioBaixo">
+                    <input type="radio" value="baixo" name="radioPr" id="radioBaixo">
+                    Baixo
+                </label>
+
+                <label class="radio-option" for="radioMedia">
+                    <input type="radio" value="media" name="radioPr" id="radioMedia">
+                    Média
+                </label>
+
+                <label class="radio-option" for="radioUrgente">
+                    <input type="radio" value="urgente" name="radioPr" id="radioUrgente">
+                    Urgente
+                </label>
+            </div>
+            <button type="submit">Criar Tarefa</button>
+        </form>
     </main>
 
     <footer>       
@@ -62,6 +115,8 @@
         <p class="copyright">&copy; 2025 GerenciAll; Site desenvolvido pela equipe [nome]. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="../script/login.js"></script>
+    <script src="../script/criar.js"></script>
+    <script src="../script/voltar.js"></script>
+    <script src="../script/theme.js"></script>
 </body>
 </html>

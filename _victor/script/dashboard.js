@@ -42,7 +42,7 @@ botoes.className = "botoes-card";
 
 const btnEditar = document.createElement("button");
 btnEditar.className = "icon-button";
-btnEditar.innerHTML = "<img src='../images/editar_icon.png' alt='icone de lapis' class='icone_editar_excluir'>";
+btnEditar.innerHTML = "<img src='../images/editar_icon.png' alt='icone de lapis' class='icone_editar_excluir icone_editar'>";
 
 const btnExcluir = document.createElement("button");
 btnExcluir.className = "icon-button";
@@ -91,33 +91,34 @@ return { linha, data: tarefa.data };
 }
 
 function carregarTarefas() {
-const lista = document.getElementById("lista-tarefas");
-lista.innerHTML = "";
+    const lista = document.getElementById("lista-tarefas");
+    lista.innerHTML = "";
 
-const agrupadas = {};
-tarefas.forEach((tarefa, index) => {
-    if (!agrupadas[tarefa.data]) agrupadas[tarefa.data] = [];
-    agrupadas[tarefa.data].push({ tarefa, index });
-});
-
-Object.keys(agrupadas).sort().forEach(data => {
-    const dataTitle = document.createElement("div");
-    dataTitle.className = "data-header";
-    const [ano, mes, dia] = data.split("-");
-    const dataFormatada = new Date(`${ano}-${mes}-${dia}T00:00:00`);
-    dataTitle.textContent = dataFormatada.toLocaleDateString("pt-BR", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric"
+    const agrupadas = {};
+    tarefas.forEach((tarefa, index) => {
+        if (!agrupadas[tarefa.data]) agrupadas[tarefa.data] = [];
+        agrupadas[tarefa.data].push({ tarefa, index });
     });
-    lista.appendChild(dataTitle);
 
-    agrupadas[data].forEach(({ tarefa, index }) => {
-    const { linha } = criarTarefaCard(tarefa, index);
-    lista.appendChild(linha);
+    Object.keys(agrupadas).sort().forEach(data => {
+        const dataTitle = document.createElement("div");
+        dataTitle.className = "data-header";
+        const [ano, mes, dia] = data.split("-");
+        const dataFormatada = new Date(`${ano}-${mes}-${dia}T00:00:00`);
+        dataTitle.textContent = dataFormatada.toLocaleDateString("pt-BR", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+        lista.appendChild(dataTitle);
+
+        agrupadas[data].forEach(({ tarefa, index }) => {
+            const { linha } = criarTarefaCard(tarefa, index);
+            lista.appendChild(linha);
+        });
     });
-});
+
+    atualizarIconesEditar(); // 🔧 Isso garante que as imagens sejam atualizadas com o tema atual
 }
-
 carregarTarefas();

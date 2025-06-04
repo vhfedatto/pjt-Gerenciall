@@ -4,6 +4,8 @@ function alternarTema() {
 
     const toggle = document.getElementById("remember-toggle");
     if (toggle) toggle.checked = isDark;
+
+    atualizarIconesEditar(); // <- aqui
 }
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -18,11 +20,24 @@ window.addEventListener("DOMContentLoaded", () => {
         if (toggle) toggle.checked = false;
     }
 
-    // Segurança extra: se o DOM e o localStorage estiverem fora de sincronia
+    // Sincronização extra
     if (toggle) {
         const domIsDark = document.body.classList.contains("dark");
         if (toggle.checked !== domIsDark) {
             toggle.checked = domIsDark;
         }
     }
+
+    atualizarIconesEditar(); // <- aqui também
 });
+
+function atualizarIconesEditar() {
+    const isDark = document.body.classList.contains("dark");
+    const icones = document.querySelectorAll(".icone_editar");
+
+    icones.forEach(img => {
+        img.src = isDark
+            ? "../images/editar_icon-branco.png"
+            : "../images/editar_icon.png";
+    });
+}

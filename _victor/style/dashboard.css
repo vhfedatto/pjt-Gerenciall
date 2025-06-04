@@ -9,16 +9,30 @@
     box-sizing: border-box;
 }
 
-/* Já editado e pronto para aplicar o modo noturno */
 body {
     background-color: var(--fundo-claro);
     color: var(--texto);
 }
 
 main {
+    width: 100%;
     max-width: 1500px;
-    margin: 0 200px;
+    margin: auto;
+    padding: 0 40px;
     padding-bottom: 4rem;
+}
+
+/* Telas grandes (acima de 1200px): mantém como está */
+@media (min-width: 1200px) {
+    main {
+        padding: 0 4rem;
+    }
+}
+
+@media (max-width: 1199px) {
+    main {
+        padding: 0 40px;
+    }
 }
 
 hr{

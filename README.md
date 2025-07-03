@@ -1,8 +1,12 @@
-# GerenciAll+
-Gerencie suas tarefas hoje!
+<img src="images/readme/logo.png" height="">
+
+<div align="center">
+    # GerenciAll+
+    _Gerencie suas tarefas hoje!_
+</div>
 
 ## O que é o site?
-GerenciAll é um programa no qual o usuário pode criar, filtrar e organizar todas as suas tarefas. Serve como uma agenda personalizada com cores.
+GerenciAll é um programa no qual o usuário pode criar, filtrar e organizar todas as suas tarefas. O programa atualmente, em sua versão 1.0.0/2025 está funcionando apenas no terminal, com os arquivos Java. O front-end ainda está em desenvolvimento.
 
 ## Devs
 * Victor H Fedatto

@@ -1,8 +1,9 @@
-<img src="images/readme/logo.png" height="">
+<div align="center">
+    <img src="images/readme/logo.png" height="">
+</div>
 
 <div align="center">
-    # GerenciAll+
-    _Gerencie suas tarefas hoje!_
+    "Gerencie suas tarefas hoje!"
 </div>
 
 ## O que é o site?
